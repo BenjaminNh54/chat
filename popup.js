@@ -1,6 +1,5 @@
 // ===== CONFIGURATION =====
-const SERVER_IP = "d8cf1844d85f.ngrok-free.app "; // Mets ici l'IP locale de ton serveur
-const SERVER_PORT = undefined;           // Mets ici le port WebSocket
+const SERVER_IP = "chat-i4wn.onrender.com"; // Domaine Render public
 // =========================
 
 let pseudo = localStorage.getItem('pseudo') || '';
@@ -20,14 +19,12 @@ let ws;
 let reconnectTimeout;
 
 function connectWS() {
-  const wsUrl = `wss://${SERVER_IP}${SERVER_PORT ? ':' + SERVER_PORT : ''}`;
+  const wsUrl = `wss://${SERVER_IP}`;
   try {
     ws = new WebSocket(wsUrl);
 
-
-
     ws.onopen = () => {
-      addMessage({ pseudo: 'Système', text: '✅ Connecté au serveur local.' });
+      addMessage({ pseudo: 'Système', text: '✅ Connecté au serveur.' });
     };
 
     ws.onmessage = (event) => {
@@ -46,7 +43,7 @@ function connectWS() {
     };
 
     ws.onerror = () => {
-      addMessage({ pseudo: 'Système', text: '❌ Impossible de se connecter au serveur local.' });
+      addMessage({ pseudo: 'Système', text: '❌ Impossible de se connecter au serveur.' });
     };
 
   } catch (err) {

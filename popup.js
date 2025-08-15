@@ -1,5 +1,5 @@
 // ===== CONFIGURATION =====
-const SERVER_IP = "6a7d15dec75b.ngrok-free.app"; // Mets ici l'IP locale de ton serveur
+const SERVER_IP = "d8cf1844d85f.ngrok-free.app "; // Mets ici l'IP locale de ton serveur
 const SERVER_PORT = undefined;           // Mets ici le port WebSocket
 // =========================
 
